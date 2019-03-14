@@ -2,6 +2,7 @@
 #define DIO_H
 
 #include "typedefs.h"
+#include "tm4c123gh6pm.h"
 
 //define pin masks 
 #define MASK_0	0b00000001
@@ -11,7 +12,7 @@
 #define MASK_4	0b00010000
 #define MASK_5	0b00100000
 #define MASK_6	0b01000000
-#define MASK_7	010000000
+#define MASK_7	0b10000000
 
 typedef enum {STD_LOW = 0, STD_HIGH = 1} Dio_LevelType; 
 
