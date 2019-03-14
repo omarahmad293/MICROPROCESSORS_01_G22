@@ -55,16 +55,22 @@ void Port_Init(uint8 port_index)
     {
     case PORT_A:
         GPIOLOCK_PORT_A = GPIOLOCK_KEY;
+        break;
     case PORT_B:
         GPIOLOCK_PORT_B = GPIOLOCK_KEY;
+        break;
     case PORT_C:
         GPIOLOCK_PORT_C = GPIOLOCK_KEY;
+        break;
     case PORT_D:
         GPIOLOCK_PORT_D = GPIOLOCK_KEY;
+        break;
     case PORT_E:
         GPIOLOCK_PORT_E = GPIOLOCK_KEY;
+        break;
     case PORT_F:
         GPIOLOCK_PORT_F = GPIOLOCK_KEY;
+        break;
     }
 
     //Allow Changes in the Port for later use as Pull-up/down Resistors
@@ -72,16 +78,22 @@ void Port_Init(uint8 port_index)
     {
     case PORT_A:
         GPIOCR_PORT_A |= PORT_PINS;
+        break;
     case PORT_B:
         GPIOCR_PORT_B |= PORT_PINS;
+        break;
     case PORT_C:
         GPIOCR_PORT_C |= PORT_PINS;
+        break;
     case PORT_D:
         GPIOCR_PORT_D |= PORT_PINS;
+        break;
     case PORT_E:
         GPIOCR_PORT_E |= PORT_PINS;
+        break;
     case PORT_F:
         GPIOCR_PORT_F |= PORT_PINS;
+        break;
     }
 
     //Select Digital Mode - (Disable Analog Mode)
@@ -89,15 +101,21 @@ void Port_Init(uint8 port_index)
     {
     case PORT_A:
         GPIOAMSEL_PORT_A &= ~PORT_PINS;
+        break;
     case PORT_B:
         GPIOAMSEL_PORT_B &= ~PORT_PINS;
+        break;
     case PORT_C:
         GPIOAMSEL_PORT_C &= ~PORT_PINS;
+        break;
     case PORT_D:
         GPIOAMSEL_PORT_D &= ~PORT_PINS;
+        break;
     case PORT_E:
         GPIOAMSEL_PORT_E &= ~PORT_PINS;
+        break;
     case PORT_F:
         GPIOAMSEL_PORT_F &= ~PORT_PINS;
+        break;
     }
 }
