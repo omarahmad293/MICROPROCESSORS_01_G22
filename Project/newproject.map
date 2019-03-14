@@ -17,6 +17,14 @@ Section Cross References
 
 ==============================================================================
 
+Removing Unused input sections from the image.
+
+    Removing dio.o(.text), (256 bytes).
+
+1 unused section(s) (total 256 bytes) removed from the image.
+
+==============================================================================
+
 Image Symbol Table
 
     Local Symbols
@@ -186,10 +194,10 @@ Memory Map of the image
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x0000026c   Data   RO           26    RESET               startup_tm4c123.o
-    0x0000026c   0x0000010c   Code   RO           27  * .text               startup_tm4c123.o
-    0x00000378   0x00000002   Code   RO           32    .text               __main.o
-    0x0000037a   0x00000006   Code   RO           43    .text               c_w.l(heapauxi.o)
+    0x00000000   0x0000026c   Data   RO           35    RESET               startup_tm4c123.o
+    0x0000026c   0x0000010c   Code   RO           36  * .text               startup_tm4c123.o
+    0x00000378   0x00000002   Code   RO           41    .text               __main.o
+    0x0000037a   0x00000006   Code   RO           52    .text               c_w.l(heapauxi.o)
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
@@ -201,8 +209,8 @@ Memory Map of the image
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00000000   Zero   RW           25    HEAP                startup_tm4c123.o
-    0x20000000   0x00000200   Zero   RW           24    STACK               startup_tm4c123.o
+    0x20000000   0x00000000   Zero   RW           34    HEAP                startup_tm4c123.o
+    0x20000000   0x00000200   Zero   RW           33    STACK               startup_tm4c123.o
 
 
 ==============================================================================

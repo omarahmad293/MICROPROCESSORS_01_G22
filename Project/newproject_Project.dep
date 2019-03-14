@@ -1,12 +1,13 @@
 Dependencies for Project 'newproject', Target 'Project': (DO NOT MODIFY !)
-F (.\DIO.c)(0x5C892726)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --signed_chars -I..\..\MCArm-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C1231H6PM-o .\dio.o --omf_browse .\dio.crf --depend .\dio.d)
-I (DIO.h)(0x5C89232F)
+F (.\DIO.c)(0x5C89DC25)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --signed_chars -I..\..\MCArm-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C1231H6PM-o .\dio.o --omf_browse .\dio.crf --depend .\dio.d)
+I (DIO.h)(0x5C89D882)
 I (typedefs.h)(0x5C891AA3)
-F (.\DIO.h)(0x5C89232F)()
+I (tm4c123gh6pm.h)(0x5C8923F3)
+F (.\DIO.h)(0x5C89D882)()
 F (.\MCAL.c)(0x5C8923E7)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --signed_chars -I..\..\MCArm-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C1231H6PM-o .\mcal.o --omf_browse .\mcal.crf --depend .\mcal.d)
 I (typedefs.h)(0x5C891AA3)
-I (MCAL.h)(0x5C8920C8)
-F (.\MCAL.h)(0x5C8920C8)()
+I (MCAL.h)(0x5C89D884)
+F (.\MCAL.h)(0x5C89D884)()
 F (.\startup_TM4C123.s)(0x5C891A1B)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123--list .\startup_tm4c123.lst --xref -o .\startup_tm4c123.o --depend .\startup_tm4c123.d)
 F (.\tm4c123gh6pm.h)(0x5C8923F3)()
 F (.\typedefs.h)(0x5C891AA3)()
