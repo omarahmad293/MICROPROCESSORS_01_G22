@@ -1,6 +1,5 @@
 #include "DIO.h"
 
-//reads a pin and returns 1 or 0
 
 uint8 DIO_ReadPort(uint8 port_index, uint8 pins_mask)
 {
