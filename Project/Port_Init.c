@@ -1,3 +1,5 @@
+#include "typedefs.h"
+
 /*
 Initialize port based on selected port_index (0 to 5) by enabling
 the clock, unlocking the port, and making the selected mode

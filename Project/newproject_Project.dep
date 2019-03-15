@@ -1,14 +1,20 @@
 Dependencies for Project 'newproject', Target 'Project': (DO NOT MODIFY !)
-F (.\DIO.c)(0x5C89DC25)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --signed_chars -I..\..\MCArm-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C1231H6PM-o .\dio.o --omf_browse .\dio.crf --depend .\dio.d)
-I (DIO.h)(0x5C89D882)
-I (typedefs.h)(0x5C891AA3)
-I (tm4c123gh6pm.h)(0x5C8923F3)
-F (.\DIO.h)(0x5C89D882)()
-F (.\MCAL.c)(0x5C8923E7)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --signed_chars -I..\..\MCArm-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C1231H6PM-o .\mcal.o --omf_browse .\mcal.crf --depend .\mcal.d)
-I (typedefs.h)(0x5C891AA3)
-I (MCAL.h)(0x5C89D884)
-F (.\MCAL.h)(0x5C89D884)()
-F (.\startup_TM4C123.s)(0x5C891A1B)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123--list .\startup_tm4c123.lst --xref -o .\startup_tm4c123.o --depend .\startup_tm4c123.d)
-F (.\tm4c123gh6pm.h)(0x5C8923F3)()
-F (.\typedefs.h)(0x5C891AA3)()
-F (.\__main.c)(0x5C892726)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --signed_chars -I..\..\MCArm-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C1231H6PM-o .\__main.o --omf_browse .\__main.crf --depend .\__main.d)
+F (.\DIO.c)(0x5C8BBC8E)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --signed_chars -I..\..\MCArm-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C1231H6PM-o .\dio.o --omf_browse .\dio.crf --depend .\dio.d)
+I (DIO.h)(0x5C8A75A6)
+I (typedefs.h)(0x5C8956D1)
+I (tm4c123gh6pm.h)(0x5C8956D1)
+F (.\DIO.h)(0x5C8A75A6)()
+F (.\MCAL.c)(0x5C8956D1)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --signed_chars -I..\..\MCArm-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C1231H6PM-o .\mcal.o --omf_browse .\mcal.crf --depend .\mcal.d)
+I (typedefs.h)(0x5C8956D1)
+I (MCAL.h)(0x5C8AADF0)
+F (.\MCAL.h)(0x5C8AADF0)()
+F (.\startup_TM4C123.s)(0x5C8956D1)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123--list .\startup_tm4c123.lst --xref -o .\startup_tm4c123.o --depend .\startup_tm4c123.d)
+F (.\tm4c123gh6pm.h)(0x5C8956D1)()
+F (.\typedefs.h)(0x5C8956D1)()
+F (.\__main.c)(0x5C8BC9BB)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --signed_chars -I..\..\MCArm-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C1231H6PM-o .\__main.o --omf_browse .\__main.crf --depend .\__main.d)
+F (.\Port_Init.c)(0x5C8BC9CD)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --signed_chars -I..\..\MCArm-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C1231H6PM-o .\port_init.o --omf_browse .\port_init.crf --depend .\port_init.d)
+I (typedefs.h)(0x5C8956D1)
+F (.\Port_SetPinDirection.c)(0x5C8A8EA8)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --signed_chars -I..\..\MCArm-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C1231H6PM-o .\port_setpindirection.o --omf_browse .\port_setpindirection.crf --depend .\port_setpindirection.d)
+I (MCAL.h)(0x5C8AADF0)
+I (typedefs.h)(0x5C8956D1)
+I (tm4c123gh6pm.h)(0x5C8956D1)

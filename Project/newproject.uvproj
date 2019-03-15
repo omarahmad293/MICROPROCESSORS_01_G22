@@ -445,6 +445,16 @@
               <FileType>1</FileType>
               <FilePath>.\__main.c</FilePath>
             </File>
+            <File>
+              <FileName>Port_Init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Port_Init.c</FilePath>
+            </File>
+            <File>
+              <FileName>Port_SetPinDirection.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Port_SetPinDirection.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
