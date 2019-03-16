@@ -88,7 +88,7 @@ Dio_LevelType DIO_ReadPort_level(uint8 port_index, uint8 pins_mask)
 					return STD_LOW;
 				else return STD_HIGH;
 		default:
-			return 0;;
+			return 0;
 	}
 }
 
@@ -102,32 +102,38 @@ void DIO_WritePort(uint8 port_index, uint8 pins_mask, Dio_LevelType pins_level)
 						GPIO_PORTA_DATA_R |= pins_mask;
 				else 
 						GPIO_PORTA_DATA_R &= ~pins_mask;
+				break;
 			case 1:
 				if(pins_level == STD_HIGH)
 						GPIO_PORTB_DATA_R |= pins_mask;
 				else 
 						GPIO_PORTB_DATA_R &= ~pins_mask;
+				break;
 			case 2:
 				if(pins_level == STD_HIGH)
 						GPIO_PORTC_DATA_R |= pins_mask;
 				else 
 						GPIO_PORTC_DATA_R &= ~pins_mask;
+				break;
 			case 3:
 				if(pins_level == STD_HIGH)
 						GPIO_PORTD_DATA_R |= pins_mask;
 				else 
 						GPIO_PORTD_DATA_R &= ~pins_mask;
+				break;
 			case 4:
 				if(pins_level == STD_HIGH)
 						GPIO_PORTE_DATA_R |= pins_mask;
 				else 
 						GPIO_PORTE_DATA_R &= ~pins_mask;
+				break;
 			case 5:
 				if(pins_level == STD_HIGH)
 						GPIO_PORTF_DATA_R |= pins_mask;
 				else 
 						GPIO_PORTF_DATA_R &= ~pins_mask;
-			}
+				break;	
+		}
 	}
 	//toggles pins for port_x
 void DIO_FlipPort(uint8 port_index, uint8 pins_mask){
