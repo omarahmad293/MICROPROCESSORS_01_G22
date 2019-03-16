@@ -13,6 +13,7 @@ Section Cross References
     startup_tm4c123.o(.text) refers to __main.o(.text) for __main
     startup_tm4c123.o(.text) refers to startup_tm4c123.o(HEAP) for Heap_Mem
     startup_tm4c123.o(.text) refers to startup_tm4c123.o(STACK) for Stack_Mem
+    pushbutton.o(.text) refers to dio.o(.text) for DIO_ReadPort
 
 
 ==============================================================================
@@ -22,8 +23,10 @@ Removing Unused input sections from the image.
     Removing dio.o(.text), (592 bytes).
     Removing port_init.o(.text), (520 bytes).
     Removing port_setpindirection.o(.text), (96 bytes).
+    Removing port_setpull.o(.text), (180 bytes).
+    Removing pushbutton.o(.text), (64 bytes).
 
-3 unused section(s) (total 1208 bytes) removed from the image.
+5 unused section(s) (total 1452 bytes) removed from the image.
 
 ==============================================================================
 
@@ -39,6 +42,8 @@ Image Symbol Table
     MCAL.c                                   0x00000000   Number         0  mcal.o ABSOLUTE
     Port_Init.c                              0x00000000   Number         0  port_init.o ABSOLUTE
     Port_SetPinDirection.c                   0x00000000   Number         0  port_setpindirection.o ABSOLUTE
+    Port_SetPull.c                           0x00000000   Number         0  port_setpull.o ABSOLUTE
+    PushButton.c                             0x00000000   Number         0  pushbutton.o ABSOLUTE
     __main.c                                 0x00000000   Number         0  __main.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
     startup_TM4C123.s                        0x00000000   Number         0  startup_tm4c123.o ABSOLUTE
@@ -201,7 +206,7 @@ Memory Map of the image
     0x00000000   0x0000026c   Data   RO           35    RESET               startup_tm4c123.o
     0x0000026c   0x0000010c   Code   RO           36  * .text               startup_tm4c123.o
     0x00000378   0x00000002   Code   RO           41    .text               __main.o
-    0x0000037a   0x00000006   Code   RO           76    .text               c_w.l(heapauxi.o)
+    0x0000037a   0x00000006   Code   RO          103    .text               c_w.l(heapauxi.o)
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
