@@ -15,7 +15,7 @@
 #define TATOCINT 0 //Clear Timer A Interrupt Status Bit
 #define TIMER_FREQ 16000000
 
-void OneShotTimer_init();
+void Timer_init(void);
 void delay_ms(uint16 value);
 void delay_us(uint16 value);
 

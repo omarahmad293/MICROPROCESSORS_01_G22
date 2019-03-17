@@ -20,13 +20,15 @@ Section Cross References
 
 Removing Unused input sections from the image.
 
-    Removing dio.o(.text), (592 bytes).
+    Removing dio.o(.text), (596 bytes).
     Removing port_init.o(.text), (520 bytes).
     Removing port_setpindirection.o(.text), (96 bytes).
     Removing port_setpull.o(.text), (180 bytes).
     Removing pushbutton.o(.text), (64 bytes).
+    Removing timer_delay.o(.text), (116 bytes).
+    Removing timer_init.o(.text), (60 bytes).
 
-5 unused section(s) (total 1452 bytes) removed from the image.
+7 unused section(s) (total 1632 bytes) removed from the image.
 
 ==============================================================================
 
@@ -42,11 +44,14 @@ Image Symbol Table
     MCAL.c                                   0x00000000   Number         0  mcal.o ABSOLUTE
     Port_Init.c                              0x00000000   Number         0  port_init.o ABSOLUTE
     Port_SetPinDirection.c                   0x00000000   Number         0  port_setpindirection.o ABSOLUTE
+    Port_SetPinPullUp.c                      0x00000000   Number         0  port_setpinpullup.o ABSOLUTE
     Port_SetPull.c                           0x00000000   Number         0  port_setpull.o ABSOLUTE
     PushButton.c                             0x00000000   Number         0  pushbutton.o ABSOLUTE
+    Timer_Delay.c                            0x00000000   Number         0  timer_delay.o ABSOLUTE
     __main.c                                 0x00000000   Number         0  __main.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
     startup_TM4C123.s                        0x00000000   Number         0  startup_tm4c123.o ABSOLUTE
+    timer_init.c                             0x00000000   Number         0  timer_init.o ABSOLUTE
     .text                                    0x0000026c   Section      268  startup_tm4c123.o(.text)
     $v0                                      0x0000026c   Number         0  startup_tm4c123.o(.text)
     .text                                    0x00000378   Section        0  __main.o(.text)
@@ -206,7 +211,7 @@ Memory Map of the image
     0x00000000   0x0000026c   Data   RO           35    RESET               startup_tm4c123.o
     0x0000026c   0x0000010c   Code   RO           36  * .text               startup_tm4c123.o
     0x00000378   0x00000002   Code   RO           41    .text               __main.o
-    0x0000037a   0x00000006   Code   RO          103    .text               c_w.l(heapauxi.o)
+    0x0000037a   0x00000006   Code   RO          136    .text               c_w.l(heapauxi.o)
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
@@ -229,12 +234,12 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-         2          0          0          0          0        341   __main.o
+         2          0          0          0          0        389   __main.o
          0          0          0          0          0       1444   dio.o
-       268         20        620          0        512       5376   startup_tm4c123.o
+       268         20        620          0        512       5404   startup_tm4c123.o
 
     ----------------------------------------------------------------------
-       270         20        620          0        512       7161   Object Totals
+       270         20        620          0        512       7237   Object Totals
          0          0          0          0          0          0   (incl. Generated)
          0          0          0          0          0          0   (incl. Padding)
 
@@ -264,8 +269,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-       276         20        620          0        512       7313   Grand Totals
-       276         20        620          0        512       7313   ELF Image Totals
+       276         20        620          0        512       7389   Grand Totals
+       276         20        620          0        512       7389   ELF Image Totals
        276         20        620          0          0          0   ROM Totals
 
 ==============================================================================
