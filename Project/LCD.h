@@ -33,7 +33,7 @@
 #define CURSOR_Shift_left	 0x10
 #define Display_shift_left    0x18
 #define Display_shift_Right	  0x1C
-#define Data_Set (0x20 |(_5x10_Dot<<2)|(Two_lines<<3)| (eight_bitdata<<4))
+#define Data_Set (0x20 |(_5x10_Dot<<2)|(Two_lines<<3)| (1<<4))
 #define DDRAM_CONST 0x80
 
 

@@ -1,4 +1,28 @@
 #include "LCD.h"
+#include "includes.h"
+
+		/* init Settings */
+#define CURSOR  1		/* 1 to Enable , 0 to Disable */
+#define Blink	0		/* 1 to Enable , 0 to Disable */
+#define _5x10_Dot	 0	/* 1 to Enable , 0 for 5 x 8 Dot */
+#define Two_lines	 1	/* 1 to Enable , 0 for 1 Line */
+#define LCD_CRTL_MASK     0x07  // 00 0111
+
+		#if ( _5x10_Dot && Two_lines )
+			#if Two_lines
+				#pragma GCC error "You cannot Have Two Lines LCD with 5 * 10"
+			#endif
+		#endif
+
+//LCD initialization
+void LCD_init(void)
+{
+		Port_SetPinDirection(PORT_E, LCD_CRTL_MASK, PORT_PIN_OUT);
+		Port_SetPinDirection(PORT_D, 0xFF, PORT_PIN_OUT);
+		LCD_sendCommand(Data_Set);
+		LCD_sendCommand(Display_on);
+		LCD_sendCommand(Clear_display);
+}
 
 
 // function to convert number to char array
@@ -55,12 +79,12 @@ void LCD_sendCommand(uint8 command)
 	//void DIO_WritePort(uint8 port_index, uint8 pins_mask, Dio_LevelType pins_level);
 	//DIO_WritePort(PORT_E, MASK_0, STD_LOW);
 	DIO_WritePort(PORT_E,0,STD_LOW);
-	DIO_WritePort(PORT_E,1,STD_LOW);
+	DIO_WritePort(PORT_E,2,STD_LOW);
 	delay_ms(1);
-	DIO_WritePort(PORT_E,2, STD_HIGH);
+	DIO_WritePort(PORT_E,4, STD_HIGH);
 	delay_ms(1);
 	DATA = command;
 	delay_ms(1);
-	DIO_WritePort(PORT_E,2, STD_LOW);
+	DIO_WritePort(PORT_E,4, STD_LOW);
 	delay_ms(1); 
 }
