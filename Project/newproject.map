@@ -1,4 +1,4 @@
-ARM Linker, 5.03 [Build 76] [MDK-ARM Lite]
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
 
 ==============================================================================
 
@@ -17,52 +17,7 @@ Section Cross References
     __main.o(.text) refers to port_setpindirection.o(.text) for Port_SetPinDirection
     __main.o(.text) refers to port_setpull.o(.text) for Port_SetPinPullUp
     __main.o(.text) refers to timer_init.o(.text) for Timer_init
-    __main.o(.text) refers to lcd.o(.text) for LCD_sendInt
     __main.o(.text) refers to pushbutton.o(.text) for PushButton_readState
     __main.o(.text) refers to timer_delay.o(.text) for delay_ms
     pushbutton.o(.text) refers to dio.o(.text) for DIO_ReadPort
-    lcd.o(.text) refers to timer_delay.o(.text) for delay_ms
-    lcd.o(.text) refers to lcd.o(.constdata) for .constdata
-
-
-==============================================================================
-
-Memory Map of the image
-
-  Image Entry point : 0x00000000
-
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00000c04, Max: 0xffffffff, ABSOLUTE)
-
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000c04, Max: 0xffffffff, ABSOLUTE)
-
-    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x00000000   0x0000026c   Data   RO           35    RESET               startup_tm4c123.o
-    0x0000026c   0x00000254   Code   RO            1    .text               dio.o
-    0x000004c0   0x0000010c   Code   RO           36  * .text               startup_tm4c123.o
-    0x000005cc   0x000000f6   Code   RO           41    .text               __main.o
-    0x000006c2   0x00000002   PAD
-    0x000006c4   0x00000208   Code   RO           65    .text               port_init.o
-    0x000008cc   0x00000060   Code   RO           77    .text               port_setpindirection.o
-    0x0000092c   0x000000b4   Code   RO           89    .text               port_setpull.o
-    0x000009e0   0x00000040   Code   RO          101    .text               pushbutton.o
-    0x00000a20   0x0000005c   Code   RO          119    .text               timer_delay.o
-    0x00000a7c   0x0000003c   Code   RO          131    .text               timer_init.o
-    0x00000ab8   0x000000fc   Code   RO          143    .text               lcd.o
-    0x00000bb4   0x00000006   Code   RO          170    .text               c_w.l(heapauxi.o)
-    0x00000bba   0x00000002   PAD
-    0x00000bbc   0x00000048   Data   RO          144    .constdata          lcd.o
-
-
-    Execution Region ER_RW (Base: 0x20000000, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
-
-    **** No section assigned to this execution region ****
-
-
-    Execution Region ER_ZI (Base: 0x20000000, Size: 0x00000200, Max: 0xffffffff, ABSOLUTE)
-
-    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x20000000   0x00000000   Zero   RW           34    HEAP                startup_tm4c123.o
-    0x20000000   0x00000200   Zero   RW           33    STACK               startup_tm4c123.o
 

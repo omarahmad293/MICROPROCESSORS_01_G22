@@ -47,3 +47,20 @@ void LCD_sendInt(uint8 number){
 		GPIO_PORTE_DATA_R &=~ 4; // clr ENABLE
 	}
 }
+
+//Sends a command to the LCD
+//uint8 command: Command to be sent
+void LCD_sendCommand(uint8 command)
+{
+	//void DIO_WritePort(uint8 port_index, uint8 pins_mask, Dio_LevelType pins_level);
+	//DIO_WritePort(PORT_E, MASK_0, STD_LOW);
+	DIO_WritePort(PORT_E,0,STD_LOW);
+	DIO_WritePort(PORT_E,1,STD_LOW);
+	delay_ms(1);
+	DIO_WritePort(PORT_E,2, STD_HIGH);
+	delay_ms(1);
+	DATA = command;
+	delay_ms(1);
+	DIO_WritePort(PORT_E,2, STD_LOW);
+	delay_ms(1); 
+}
