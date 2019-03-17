@@ -210,8 +210,8 @@
       <Focus>1</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>140</TopLine>
-      <CurrentLine>157</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>2</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\DIO.c</PathWithFileName>
       <FilenameWithoutPath>DIO.c</FilenameWithoutPath>
@@ -243,7 +243,7 @@
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <CurrentLine>4</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\MCAL.c</PathWithFileName>
       <FilenameWithoutPath>MCAL.c</FilenameWithoutPath>
@@ -320,10 +320,17 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>1</Focus>
+<<<<<<< Updated upstream
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>11</TopLine>
       <CurrentLine>27</CurrentLine>
+=======
+      <ColumnNumber>1</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>2</TopLine>
+      <CurrentLine>4</CurrentLine>
+>>>>>>> Stashed changes
       <bDave2>0</bDave2>
       <PathWithFileName>.\__main.c</PathWithFileName>
       <FilenameWithoutPath>__main.c</FilenameWithoutPath>
