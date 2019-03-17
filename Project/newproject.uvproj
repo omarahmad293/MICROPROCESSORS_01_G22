@@ -475,6 +475,21 @@
               <FileType>1</FileType>
               <FilePath>.\PushButton.c</FilePath>
             </File>
+            <File>
+              <FileName>Port_SetPinPullUp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Port_SetPinPullUp.c</FilePath>
+            </File>
+            <File>
+              <FileName>Timer_Delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Timer_Delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\timer_init.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
