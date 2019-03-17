@@ -3,6 +3,7 @@
 
 #include "typedefs.h"
 #include "tm4c123gh6pm.h"
+#include "DIO.h"
 
 void LCD_sendCommand(uint8 command);
 void LCD_sendInt(uint8 number);

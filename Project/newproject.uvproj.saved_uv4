@@ -141,7 +141,7 @@
             <RestoreToolbox>1</RestoreToolbox>
             <RestoreTracepoints>1</RestoreTracepoints>
             <RestoreSysVw>1</RestoreSysVw>
-            <UsePdscDebugDescription>0</UsePdscDebugDescription>
+            <UsePdscDebugDescription>1</UsePdscDebugDescription>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
           <TargetSelection>3</TargetSelection>
@@ -167,7 +167,7 @@
             <UseExternalTool>0</UseExternalTool>
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
-            <Capability>0</Capability>
+            <Capability>1</Capability>
             <DriverSelection>-1</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
@@ -444,6 +444,66 @@
               <FileName>__main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\__main.c</FilePath>
+            </File>
+            <File>
+              <FileName>Port_Init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Port_Init.c</FilePath>
+            </File>
+            <File>
+              <FileName>Port_SetPinDirection.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Port_SetPinDirection.c</FilePath>
+            </File>
+            <File>
+              <FileName>Port_SetPull.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Port_SetPull.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCD.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LCD.h</FilePath>
+            </File>
+            <File>
+              <FileName>PushButton.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\PushButton.h</FilePath>
+            </File>
+            <File>
+              <FileName>PushButton.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\PushButton.c</FilePath>
+            </File>
+            <File>
+              <FileName>Port_SetPinPullUp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Port_SetPinPullUp.c</FilePath>
+            </File>
+            <File>
+              <FileName>Timer_Delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Timer_Delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\timer_init.c</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\GPIO.h</FilePath>
+            </File>
+            <File>
+              <FileName>timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>includes.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\includes.h</FilePath>
             </File>
           </Files>
         </Group>
