@@ -3,7 +3,7 @@
 //This Code will be Initialize and configure 16/32-bit TIMERA0 to work on One-Shot mode
 //Look on the Datasheet on section 11.4 
 
-void timer_init(void)
+void Timer_init(void)
 {
 	//To use a GPTM, the appropriate TIMERA (R0) bit must be set in the RCGCTIMER	
 	SYSCTL_RCGCTIMER_R |= (1<<0); 
@@ -20,5 +20,6 @@ void timer_init(void)
 	TIMER0_TAMR_R |= (0x1<<0);  
 		
 	//Set timer to be count down timer 
-	TIMER0_TAMR_R &= ~ (1<<4); 
+	//TIMER0_TAMR_R &= ~ (1<<4); 
+	TIMER0_TAMR_R |=  (1<<4);
 }

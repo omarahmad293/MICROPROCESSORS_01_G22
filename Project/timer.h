@@ -16,7 +16,7 @@
 #define TIMER_FREQ 16000000
 
 void Timer_init(void);
-void delay_ms(uint16 value);
-void delay_us(uint16 value);
+void delay_ms(uint32 value);
+void delay_us(uint32 value);
 
 #endif

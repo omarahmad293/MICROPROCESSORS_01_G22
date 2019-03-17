@@ -4,10 +4,10 @@
 //We will be working on Timer0 A-Full Register
 //Look th Datasheet pages 123, 137, 704, 709, 722
 
-void delay_ms(uint16 value)
+void delay_ms(uint32 value)
 {
     //Load the start value into theGPTM Timer n Interval Load Register (GPTMTnILR). Look Page 756
-    GPTMTAILR_0 = (value * TIMER_FREQ) / 1000;
+    GPTMTAILR_0 = value * (TIMER_FREQ / 1000);
 
     //Set theTnENbit in theGPTMCTLregister to enable the timer and start counting. Look Page 737
     GPTMCTL_0 |= (1 << TAEN);
@@ -20,10 +20,10 @@ void delay_ms(uint16 value)
     GPTMICR_0 |= (1 << TATOCINT);
 }
 
-void delay_us(uint16 value)
+void delay_us(uint32 value)
 {
     //Load the start value into theGPTM Timer n Interval Load Register (GPTMTnILR). Look Page 756
-    GPTMTAILR_0 = (value * TIMER_FREQ) / (1000 * 1000);
+    GPTMTAILR_0 = value * ((TIMER_FREQ) / (1000 * 1000));
 
     //Set theTnENbit in theGPTMCTLregister to enable the timer and start counting. Look Page 737
     GPTMCTL_0 |= (1 << TAEN);
