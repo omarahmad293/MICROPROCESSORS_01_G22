@@ -7,3 +7,4 @@
 .\__main.o: PushButton.h
 .\__main.o: timer.h
 .\__main.o: GPIO.h
+.\__main.o: LCD.h

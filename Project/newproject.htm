@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\newproject.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\newproject.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sun Mar 17 21:11:08 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Mon Mar 18 17:50:28 2019
 <BR><P>
-<H3>Maximum Stack Usage =          8 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =         44 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-__main &rArr; Port_SetPinPullUp
+__main &rArr; LCD_sendInt &rArr; itoa
 <P>
 <H3>
 Functions with no stack information
@@ -264,19 +264,19 @@ Function Pointers
 <H3>
 Global Symbols
 </H3>
-<P><STRONG><a name="[80]"></a>DIO_ReadPort</STRONG> (Thumb, 80 bytes, Stack size 0 bytes, dio.o(.text), UNUSED)
+<P><STRONG><a name="[82]"></a>DIO_ReadPort</STRONG> (Thumb, 80 bytes, Stack size 0 bytes, dio.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PushButton_readState
+</UL>
 
-<P><STRONG><a name="[81]"></a>DIO_ReadPort_level</STRONG> (Thumb, 116 bytes, Stack size 0 bytes, dio.o(.text), UNUSED)
+<P><STRONG><a name="[86]"></a>DIO_ReadPort_level</STRONG> (Thumb, 116 bytes, Stack size 0 bytes, dio.o(.text), UNUSED)
 
-<P><STRONG><a name="[7c]"></a>DIO_WritePort</STRONG> (Thumb, 240 bytes, Stack size 8 bytes, dio.o(.text))
+<P><STRONG><a name="[84]"></a>DIO_WritePort</STRONG> (Thumb, 240 bytes, Stack size 8 bytes, dio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = DIO_WritePort
 </UL>
-<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_sendCommand
 </UL>
 
-<P><STRONG><a name="[7f]"></a>DIO_FlipPort</STRONG> (Thumb, 116 bytes, Stack size 0 bytes, dio.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
-</UL>
+<P><STRONG><a name="[87]"></a>DIO_FlipPort</STRONG> (Thumb, 116 bytes, Stack size 0 bytes, dio.o(.text), UNUSED)
 
 <P><STRONG><a name="[77]"></a>Reset_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, startup_tm4c123.o(.text))
 
@@ -1101,16 +1101,18 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[78]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_tm4c123.o(.text), UNUSED, KEPT)
 
-<P><STRONG><a name="[76]"></a>__main</STRONG> (Thumb, 70 bytes, Stack size 0 bytes, __main.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __main &rArr; Port_SetPinPullUp
+<P><STRONG><a name="[76]"></a>__main</STRONG> (Thumb, 232 bytes, Stack size 0 bytes, __main.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = __main &rArr; LCD_sendInt &rArr; itoa
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_init
+<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_init
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PushButton_readState
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Port_SetPinPullUp
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Port_SetPinDirection
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Port_Init
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DIO_FlipPort
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DIO_WritePort
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_sendInt
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clearScreen
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(.text)
 </UL>
@@ -1130,23 +1132,76 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[82]"></a>Port_SetPinPulldown</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, port_setpull.o(.text), UNUSED)
+<P><STRONG><a name="[88]"></a>Port_SetPinPulldown</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, port_setpull.o(.text), UNUSED)
 
-<P><STRONG><a name="[7e]"></a>delay_ms</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, timer_delay.o(.text))
+<P><STRONG><a name="[7f]"></a>PushButton_readState</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, pushbutton.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = PushButton_readState
+</UL>
+<BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DIO_ReadPort
+</UL>
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+
+<P><STRONG><a name="[80]"></a>delay_ms</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, timer_delay.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_sendCommand
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_sendInt
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+
+<P><STRONG><a name="[89]"></a>delay_us</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, timer_delay.o(.text), UNUSED)
+
+<P><STRONG><a name="[7c]"></a>Timer_init</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, timer_init.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[83]"></a>delay_us</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, timer_delay.o(.text), UNUSED)
-
-<P><STRONG><a name="[7d]"></a>Timer_init</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, timer_init.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<P><STRONG><a name="[83]"></a>LCD_sendCommand</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, lcd.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = LCD_sendCommand &rArr; DIO_WritePort
+</UL>
+<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DIO_WritePort
+</UL>
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clearScreen
 </UL>
 
-<P><STRONG><a name="[84]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[7d]"></a>LCD_init</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, lcd.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = LCD_init &rArr; LCD_sendCommand &rArr; DIO_WritePort
+</UL>
+<BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_sendCommand
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+</UL>
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
 
-<P><STRONG><a name="[85]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[85]"></a>itoa</STRONG> (Thumb, 96 bytes, Stack size 20 bytes, lcd.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = itoa
+</UL>
+<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_sendInt
+</UL>
 
-<P><STRONG><a name="[86]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[7e]"></a>LCD_sendInt</STRONG> (Thumb, 136 bytes, Stack size 24 bytes, lcd.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = LCD_sendInt &rArr; itoa
+</UL>
+<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;itoa
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+</UL>
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+
+<P><STRONG><a name="[81]"></a>LCD_clearScreen</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, lcd.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = LCD_clearScreen &rArr; LCD_sendCommand &rArr; DIO_WritePort
+</UL>
+<BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_sendCommand
+</UL>
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+
+<P><STRONG><a name="[8a]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+
+<P><STRONG><a name="[8b]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+
+<P><STRONG><a name="[8c]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 <P>
 <H3>
 Local Symbols

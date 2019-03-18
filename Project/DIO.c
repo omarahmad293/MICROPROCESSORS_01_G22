@@ -88,7 +88,7 @@ Dio_LevelType DIO_ReadPort_level(uint8 port_index, uint8 pins_mask)
 					return STD_LOW;
 				else return STD_HIGH;
 		default:
-			return 0;
+			return STD_LOW;
 	}
 }
 

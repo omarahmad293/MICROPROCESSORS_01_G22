@@ -17,8 +17,9 @@
 //LCD initialization
 void LCD_init(void)
 {
-		Port_SetPinDirection(PORT_E, LCD_CRTL_MASK, PORT_PIN_OUT);
-		Port_SetPinDirection(PORT_D, 0xFF, PORT_PIN_OUT);
+		delay_ms(200);
+		//Port_SetPinDirection(PORT_E, LCD_CRTL_MASK, PORT_PIN_OUT);
+		//Port_SetPinDirection(PORT_D, 0xFF, PORT_PIN_OUT);
 		LCD_sendCommand(Data_Set);
 		LCD_sendCommand(Display_on);
 		LCD_sendCommand(Clear_display);
@@ -28,11 +29,11 @@ void LCD_init(void)
 // function to convert number to char array
 char* itoa(int value, char* result, int base) {
 		// check that the base if valid
-	
-		if (base < 2 || base > 36) { *result = '\0'; return result; }
-
 		char* ptr = result, *ptr1 = result, tmp_char;
 		int tmp_value;
+		if (base < 2 || base > 36) { *result = '\0'; return result; }
+
+		
 
 		do {
 			tmp_value = value;
@@ -52,7 +53,7 @@ char* itoa(int value, char* result, int base) {
 	}
 
 
-void LCD_sendInt(uint8 number){
+void LCD_sendInt(uint16 number){
 	uint8 n;
 	uint8 i=0;
 	char c[3];
@@ -63,12 +64,12 @@ void LCD_sendInt(uint8 number){
 	itoa(number,c,10);
 	
 	for( i=0; i<n; i++){
-		GPIO_PORTD_DATA_R=c[i]; //send numbers character by character
-		GPIO_PORTE_DATA_R |= 1; // set RS
-		GPIO_PORTE_DATA_R |= 4; // set ENABLE
-		GPIO_PORTE_DATA_R &=~ 2; //clr rw aka write mode
-		delay_ms(10);
-		GPIO_PORTE_DATA_R &=~ 4; // clr ENABLE
+		GPIO_PORTB_DATA_R= c[i]; //send numbers character by character
+		GPIO_PORTF_DATA_R |= 1; // set RS
+		GPIO_PORTF_DATA_R |= 4; // set ENABLE
+		GPIO_PORTF_DATA_R &=~ 2; //clr rw aka write mode
+		delay_ms(1);
+		GPIO_PORTF_DATA_R &=~ 4; // clr ENABLE
 	}
 }
 
@@ -78,13 +79,18 @@ void LCD_sendCommand(uint8 command)
 {
 	//void DIO_WritePort(uint8 port_index, uint8 pins_mask, Dio_LevelType pins_level);
 	//DIO_WritePort(PORT_E, MASK_0, STD_LOW);
-	DIO_WritePort(PORT_E,0,STD_LOW);
-	DIO_WritePort(PORT_E,2,STD_LOW);
-	delay_ms(1);
-	DIO_WritePort(PORT_E,4, STD_HIGH);
-	delay_ms(1);
+	DIO_WritePort(PORT_F,1,STD_LOW);
+	DIO_WritePort(PORT_F,2,STD_LOW);
+	delay_ms(50);
+	DIO_WritePort(PORT_F,4, STD_HIGH);
+	delay_ms(50);
 	DATA = command;
-	delay_ms(1);
-	DIO_WritePort(PORT_E,4, STD_LOW);
-	delay_ms(1); 
+	delay_ms(50);
+	DIO_WritePort(PORT_F,4, STD_LOW);
+	delay_ms(50); 
+}
+
+void LCD_clearScreen()
+{
+	LCD_sendCommand(Clear_display);
 }
