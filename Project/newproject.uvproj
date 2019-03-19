@@ -510,6 +510,11 @@
               <FileType>1</FileType>
               <FilePath>.\LCD.c</FilePath>
             </File>
+            <File>
+              <FileName>Pin_Init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pin_Init.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

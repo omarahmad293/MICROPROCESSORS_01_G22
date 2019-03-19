@@ -14,6 +14,7 @@ Section Cross References
     startup_tm4c123.o(.text) refers to startup_tm4c123.o(HEAP) for Heap_Mem
     startup_tm4c123.o(.text) refers to startup_tm4c123.o(STACK) for Stack_Mem
     __main.o(.text) refers to port_init.o(.text) for Port_Init
+    __main.o(.text) refers to pin_init.o(.text) for Pin_Init
     __main.o(.text) refers to port_setpindirection.o(.text) for Port_SetPinDirection
     __main.o(.text) refers to port_setpull.o(.text) for Port_SetPinPullUp
     __main.o(.text) refers to timer_init.o(.text) for Timer_init
@@ -39,6 +40,7 @@ Image Symbol Table
     DIO.c                                    0x00000000   Number         0  dio.o ABSOLUTE
     LCD.c                                    0x00000000   Number         0  lcd.o ABSOLUTE
     MCAL.c                                   0x00000000   Number         0  mcal.o ABSOLUTE
+    Pin_Init.c                               0x00000000   Number         0  pin_init.o ABSOLUTE
     Port_Init.c                              0x00000000   Number         0  port_init.o ABSOLUTE
     Port_SetPinDirection.c                   0x00000000   Number         0  port_setpindirection.o ABSOLUTE
     Port_SetPinPullUp.c                      0x00000000   Number         0  port_setpinpullup.o ABSOLUTE
@@ -53,15 +55,16 @@ Image Symbol Table
     .text                                    0x000004c0   Section      268  startup_tm4c123.o(.text)
     $v0                                      0x000004c0   Number         0  startup_tm4c123.o(.text)
     .text                                    0x000005cc   Section        0  __main.o(.text)
-    .text                                    0x000006b4   Section        0  port_init.o(.text)
-    .text                                    0x000008bc   Section        0  port_setpindirection.o(.text)
-    .text                                    0x0000091c   Section        0  port_setpull.o(.text)
-    .text                                    0x000009d0   Section        0  pushbutton.o(.text)
-    .text                                    0x00000a10   Section        0  timer_delay.o(.text)
-    .text                                    0x00000a6c   Section        0  timer_init.o(.text)
-    .text                                    0x00000aa8   Section        0  lcd.o(.text)
-    .text                                    0x00000c14   Section        0  heapauxi.o(.text)
-    .constdata                               0x00000c1c   Section       72  lcd.o(.constdata)
+    .text                                    0x000006e0   Section        0  port_init.o(.text)
+    .text                                    0x000008e8   Section        0  port_setpindirection.o(.text)
+    .text                                    0x00000948   Section        0  port_setpull.o(.text)
+    .text                                    0x000009fc   Section        0  pushbutton.o(.text)
+    .text                                    0x00000a3c   Section        0  timer_delay.o(.text)
+    .text                                    0x00000a98   Section        0  timer_init.o(.text)
+    .text                                    0x00000ad4   Section        0  lcd.o(.text)
+    .text                                    0x00000c40   Section        0  pin_init.o(.text)
+    .text                                    0x00000e0c   Section        0  heapauxi.o(.text)
+    .constdata                               0x00000e14   Section       72  lcd.o(.constdata)
     HEAP                                     0x20000000   Section        0  startup_tm4c123.o(HEAP)
     STACK                                    0x20000000   Section      512  startup_tm4c123.o(STACK)
     Heap_Mem                                 0x20000000   Data           0  startup_tm4c123.o(HEAP)
@@ -199,23 +202,24 @@ Image Symbol Table
     PWM1_3_Handler                           0x000005ab   Thumb Code     2  startup_tm4c123.o(.text)
     PWM1_FAULT_Handler                       0x000005ad   Thumb Code     2  startup_tm4c123.o(.text)
     __user_initial_stackheap                 0x000005b1   Thumb Code     0  startup_tm4c123.o(.text)
-    __main                                   0x000005cd   Thumb Code   232  __main.o(.text)
-    Port_Init                                0x000006b5   Thumb Code   464  port_init.o(.text)
-    Port_SetPinDirection                     0x000008bd   Thumb Code    72  port_setpindirection.o(.text)
-    Port_SetPinPullUp                        0x0000091d   Thumb Code    72  port_setpull.o(.text)
-    Port_SetPinPulldown                      0x00000965   Thumb Code    84  port_setpull.o(.text)
-    PushButton_readState                     0x000009d1   Thumb Code    64  pushbutton.o(.text)
-    delay_ms                                 0x00000a11   Thumb Code    46  timer_delay.o(.text)
-    delay_us                                 0x00000a3f   Thumb Code    42  timer_delay.o(.text)
-    Timer_init                               0x00000a6d   Thumb Code    50  timer_init.o(.text)
-    LCD_sendCommand                          0x00000aa9   Thumb Code    76  lcd.o(.text)
-    LCD_init                                 0x00000af5   Thumb Code    28  lcd.o(.text)
-    itoa                                     0x00000b11   Thumb Code    96  lcd.o(.text)
-    LCD_sendInt                              0x00000b71   Thumb Code   136  lcd.o(.text)
-    LCD_clearScreen                          0x00000bf9   Thumb Code    10  lcd.o(.text)
-    __use_two_region_memory                  0x00000c15   Thumb Code     2  heapauxi.o(.text)
-    __rt_heap_escrow$2region                 0x00000c17   Thumb Code     2  heapauxi.o(.text)
-    __rt_heap_expand$2region                 0x00000c19   Thumb Code     2  heapauxi.o(.text)
+    __main                                   0x000005cd   Thumb Code   276  __main.o(.text)
+    Port_Init                                0x000006e1   Thumb Code   464  port_init.o(.text)
+    Port_SetPinDirection                     0x000008e9   Thumb Code    72  port_setpindirection.o(.text)
+    Port_SetPinPullUp                        0x00000949   Thumb Code    72  port_setpull.o(.text)
+    Port_SetPinPulldown                      0x00000991   Thumb Code    84  port_setpull.o(.text)
+    PushButton_readState                     0x000009fd   Thumb Code    64  pushbutton.o(.text)
+    delay_ms                                 0x00000a3d   Thumb Code    46  timer_delay.o(.text)
+    delay_us                                 0x00000a6b   Thumb Code    42  timer_delay.o(.text)
+    Timer_init                               0x00000a99   Thumb Code    50  timer_init.o(.text)
+    LCD_sendCommand                          0x00000ad5   Thumb Code    76  lcd.o(.text)
+    LCD_init                                 0x00000b21   Thumb Code    28  lcd.o(.text)
+    itoa                                     0x00000b3d   Thumb Code    96  lcd.o(.text)
+    LCD_sendInt                              0x00000b9d   Thumb Code   136  lcd.o(.text)
+    LCD_clearScreen                          0x00000c25   Thumb Code    10  lcd.o(.text)
+    Pin_Init                                 0x00000c41   Thumb Code   404  pin_init.o(.text)
+    __use_two_region_memory                  0x00000e0d   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x00000e0f   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x00000e11   Thumb Code     2  heapauxi.o(.text)
 
 
 
@@ -225,26 +229,27 @@ Memory Map of the image
 
   Image Entry point : 0x000004c1
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00000c64, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000e5c, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000c64, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000e5c, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x0000026c   Data   RO           35    RESET               startup_tm4c123.o
     0x0000026c   0x00000254   Code   RO            1    .text               dio.o
     0x000004c0   0x0000010c   Code   RO           36  * .text               startup_tm4c123.o
-    0x000005cc   0x000000e8   Code   RO           41    .text               __main.o
-    0x000006b4   0x00000208   Code   RO           68    .text               port_init.o
-    0x000008bc   0x00000060   Code   RO           80    .text               port_setpindirection.o
-    0x0000091c   0x000000b4   Code   RO           92    .text               port_setpull.o
-    0x000009d0   0x00000040   Code   RO          104    .text               pushbutton.o
-    0x00000a10   0x0000005c   Code   RO          122    .text               timer_delay.o
-    0x00000a6c   0x0000003c   Code   RO          134    .text               timer_init.o
-    0x00000aa8   0x0000016c   Code   RO          146    .text               lcd.o
-    0x00000c14   0x00000006   Code   RO          161    .text               c_w.l(heapauxi.o)
-    0x00000c1a   0x00000002   PAD
-    0x00000c1c   0x00000048   Data   RO          147    .constdata          lcd.o
+    0x000005cc   0x00000114   Code   RO           41    .text               __main.o
+    0x000006e0   0x00000208   Code   RO           68    .text               port_init.o
+    0x000008e8   0x00000060   Code   RO           80    .text               port_setpindirection.o
+    0x00000948   0x000000b4   Code   RO           92    .text               port_setpull.o
+    0x000009fc   0x00000040   Code   RO          104    .text               pushbutton.o
+    0x00000a3c   0x0000005c   Code   RO          122    .text               timer_delay.o
+    0x00000a98   0x0000003c   Code   RO          134    .text               timer_init.o
+    0x00000ad4   0x0000016c   Code   RO          146    .text               lcd.o
+    0x00000c40   0x000001cc   Code   RO          159    .text               pin_init.o
+    0x00000e0c   0x00000006   Code   RO          173    .text               c_w.l(heapauxi.o)
+    0x00000e12   0x00000002   PAD
+    0x00000e14   0x00000048   Data   RO          147    .constdata          lcd.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
@@ -267,20 +272,21 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       232          0          0          0          0        821   __main.o
-       596         68          0          0          0       3721   dio.o
-       364         18         72          0          0       1624   lcd.o
-         0          0          0          0          0        264   mcal.o
-       520         62          0          0          0        604   port_init.o
-        96         30          0          0          0        695   port_setpindirection.o
-       180         36          0          0          0        968   port_setpull.o
-        64          0          0          0          0        647   pushbutton.o
-       268         20        620          0        512       5400   startup_tm4c123.o
-        92          4          0          0          0        596   timer_delay.o
-        60         10          0          0          0        421   timer_init.o
+       276          0          0          0          0        757   __main.o
+       596         68          0          0          0       3597   dio.o
+       364         18         72          0          0       1576   lcd.o
+         0          0          0          0          0        224   mcal.o
+       460         62          0          0          0        595   pin_init.o
+       520         62          0          0          0        564   port_init.o
+        96         30          0          0          0        651   port_setpindirection.o
+       180         36          0          0          0        924   port_setpull.o
+        64          0          0          0          0        607   pushbutton.o
+       268         20        620          0        512       5360   startup_tm4c123.o
+        92          4          0          0          0        556   timer_delay.o
+        60         10          0          0          0        381   timer_init.o
 
     ----------------------------------------------------------------------
-      2472        248        692          0        512      15761   Object Totals
+      2976        310        692          0        512      15792   Object Totals
          0          0          0          0          0          0   (incl. Generated)
          0          0          0          0          0          0   (incl. Padding)
 
@@ -310,15 +316,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2480        248        692          0        512      15313   Grand Totals
-      2480        248        692          0        512      15313   ELF Image Totals
-      2480        248        692          0          0          0   ROM Totals
+      2984        310        692          0        512      15244   Grand Totals
+      2984        310        692          0        512      15244   ELF Image Totals
+      2984        310        692          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 3172 (   3.10kB)
+    Total RO  Size (Code + RO Data)                 3676 (   3.59kB)
     Total RW  Size (RW Data + ZI Data)               512 (   0.50kB)
-    Total ROM Size (Code + RO Data + RW Data)       3172 (   3.10kB)
+    Total ROM Size (Code + RO Data + RW Data)       3676 (   3.59kB)
 
 ==============================================================================
 

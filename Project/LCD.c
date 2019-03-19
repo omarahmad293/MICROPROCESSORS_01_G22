@@ -17,7 +17,7 @@
 //LCD initialization
 void LCD_init(void)
 {
-		delay_ms(200);
+		delay_ms(1);
 		//Port_SetPinDirection(PORT_E, LCD_CRTL_MASK, PORT_PIN_OUT);
 		//Port_SetPinDirection(PORT_D, 0xFF, PORT_PIN_OUT);
 		LCD_sendCommand(Data_Set);
@@ -81,13 +81,13 @@ void LCD_sendCommand(uint8 command)
 	//DIO_WritePort(PORT_E, MASK_0, STD_LOW);
 	DIO_WritePort(PORT_F,1,STD_LOW);
 	DIO_WritePort(PORT_F,2,STD_LOW);
-	delay_ms(50);
+	delay_ms(1);
 	DIO_WritePort(PORT_F,4, STD_HIGH);
-	delay_ms(50);
+	delay_ms(1);
 	DATA = command;
-	delay_ms(50);
+	delay_ms(1);
 	DIO_WritePort(PORT_F,4, STD_LOW);
-	delay_ms(50); 
+	delay_ms(1); 
 }
 
 void LCD_clearScreen()
