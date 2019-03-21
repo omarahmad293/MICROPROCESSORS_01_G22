@@ -10,7 +10,7 @@
 
 void __main()
 {
-	uint16 count = 500;
+	uint16 count = 0;
 	
 	//Initialize PORT_B for LCD data
 	Port_Init(LCD_DATA);
@@ -27,7 +27,7 @@ void __main()
 	
 	//Set the direction of the push button pins to be input
 	Port_SetPinDirection(PORT_F, PUSH_BUTTONS_MASK, PORT_PIN_IN);
-  Port_SetPinDirection(PORT_A, 32, PORT_PIN_IN);
+  	Port_SetPinDirection(PORT_A, 32, PORT_PIN_IN);
 	
 	//Enable the pullup resistors for the push buttons
 	Port_SetPinPullUp(PORT_F, PUSH_BUTTONS_MASK, 1);
@@ -46,12 +46,16 @@ void __main()
 	for(;;)
 	{
 		//If the increment button is pressed
-		if (!PushButton_readState(PORT_F, INCREMENT_BUTTON) == PRESSED)
+		if (!PushButton_readState(PORT_F, INCREMENT_BUTTON) == PRESSED && count != 999)
 		{
 			//Wait for 0.2 second
 			delay_ms(200);
 			
 			//Check if button is still pressed
+			/*
+			THE USER HAS TO KEEP PRESSING THE BUTTON AFTER THE 0.2 SECONDS DELAY
+			THIS CAN BE SOLVED BY REMOVING THIS CONDITION
+			*/
 			if (!PushButton_readState(PORT_F, INCREMENT_BUTTON) == PRESSED)
 			{
 				//Increment counter
@@ -66,7 +70,7 @@ void __main()
 		}
 		
 		//If the decrement button is pressed
-		else if (!PushButton_readState(PORT_F, DECREMENT_BUTTON) == PRESSED)
+		else if (!PushButton_readState(PORT_F, DECREMENT_BUTTON) == PRESSED && count != 0)
 		{
 			//Decrement counter
 			count--;

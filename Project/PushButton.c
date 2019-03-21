@@ -1,6 +1,7 @@
 #include "PushButton.h"
 #include "DIO.h"
 #include "tm4c123gh6pm.h"
+#include "timer.h"
 
 PushButton_State PushButton_readState(uint8 port_index, uint8 pin_index)
 {
@@ -8,7 +9,7 @@ PushButton_State PushButton_readState(uint8 port_index, uint8 pin_index)
 		
 	if(DIO_ReadPort(port_index, (1 << pin_index)))
 	{
-		for (i = 0; i < 10000; i++); //Delay
+		delay_ms(30);
 		if(DIO_ReadPort(port_index, (1 << pin_index))) //Debouncing check
 		{
 			return PRESSED;
